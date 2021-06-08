@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{%block content%}
+
+<h1>Welcome To Research Paper Recommendation Software</h1>
+{% if user.is_authenticated %}
+	<div>
+		<h2>Search <a href="/search">Research Papers</a></h2>
+		<form>
+			
+		</form>
+	</div>
+{% else %}
+	<a href="/login">Login Here</a>
+	<a href="/register">Register</a>
+{% endif %}
+{%endblock%}

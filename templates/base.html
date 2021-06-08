@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Research Paper Recommender</title>
+		<link rel="stylesheet"  href="{% static 'css/styles.css' %}"/>
+	</head>
+	<ul class="nav">	
+	  <li><a href="/" class={{ home_page }}>Home</a></li>
+	  <li><a href="/search" class={{ search_page }}>Search</a></li>
+	  <li><a href="/contact" class={{ contact_page }}>Contact</a></li>
+	  <li><a href="/about" class={{ about_page }}>About</a></li>
+	  {% if user.is_authenticated %}
+	  <li style="float:right"><a href="/logout" >Logout</a></li>
+	  <li style="float:right"><a href="/" >Your Profile</a></li>
+	  {% else %}
+	  <li style="float:right" class={{ login_page }}><a href="/login" >Login</a></li>
+	  <li style="float:right" class={{ register_page }}><a href="/register" >Register</a></li>
+	  {% endif %}
+	</ul>
+	<body>
+		{%block content%} <! --Content is the name of the block. Can make another block with name block content2 --> 
+		{%endblock%}
+	</body>
+</html>
